@@ -1,0 +1,35 @@
+@import "susy/sass/susy";
+@import "lifesite/index";
+
+$layout-width: 650px;
+
+.container {
+    @include full;
+    height: 100%;
+    background-color: #fff;
+}
+
+.left {
+    width: calc(100% - #{$layout-width});
+    height: 100%;
+    background: url("assets/img/pages/login/phone-white-bg.jpg") 0 0 no-repeat;
+    background-position: 50% 10%;
+    background-size: cover !important;
+}
+
+.right {
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: #{$layout-width};
+}
+
+@include susy-breakpoint(0 850px, 7) {
+    .left {
+        display: none;
+    }
+    .right {
+        width:100%;
+    }
+}

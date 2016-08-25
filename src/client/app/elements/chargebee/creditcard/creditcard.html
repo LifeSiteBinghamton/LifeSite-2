@@ -1,0 +1,21 @@
+<div class="credit-card">
+    <template [ngIf]="creditCard">
+        <div class="ui raised card">
+            <div class="content">
+                <div class="header">{{creditCard.card_type | uppercase}} (default card)</div>
+
+                <div class="description">
+                    <img class="ui middle aligned tiny image" src="assets/img/creditcards/{{creditCard.card_type}}.png">
+                    <span>{{creditCard.masked_number}}</span>
+                </div>
+            </div>
+            <div class="ui buttons">
+                <button class="ui button" [routerLink]="['/app/customer/update/payment']">Update this Card</button>
+            </div>
+        </div>
+    </template>
+
+    <div [hidden]="creditCard !== null">
+        <button class="ui button" [routerLink]="['/app/customer/update/payment']">Click to Add a New Credit Card</button>
+    </div>
+</div>

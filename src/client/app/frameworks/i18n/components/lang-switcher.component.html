@@ -1,0 +1,6 @@
+<div class="field">
+    <label>Change Language</label>
+    <select class="ui dropdown" [(ngModel)]="lang" (change)="changeLang($event)" name="lang">
+        <option *ngFor="let l of supportedLanguages" [value]="l.code">{{l.title}}</option>
+    </select>
+</div>

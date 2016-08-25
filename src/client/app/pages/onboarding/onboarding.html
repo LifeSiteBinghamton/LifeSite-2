@@ -1,0 +1,45 @@
+<div lsTheme>
+    <ls-simple-header></ls-simple-header>
+    <div class="wrapper">
+        <div class="onboarding">
+
+            <wizard [loading]="handler.isProcessing$ | async"
+                    [currentStep]="currentStep"
+                    [wizardStyle]="handler.wizardStyle$ | async"
+                    delay="300">
+                <wizard-title>
+                    Let's get started by getting to know you.
+                </wizard-title>
+
+                <wizard-step>
+                    <wizard-step-content>
+                        <ls-dynamic-form [configuration]="config[0]"
+                                         formId="onboarding:first_name"
+                                         (submitEvent)="onSubmit($event)" #form1>
+                        </ls-dynamic-form>
+                        <div class="onboarding__feedback">{{feedback}}</div>
+                    </wizard-step-content>
+
+                    <wizard-step-footer>
+                        <button *ngIf="currentStep === 0" class="ui button" [disabled]="!form1.valid" (click)="form1.doSubmit();">Next</button>
+                    </wizard-step-footer>
+                </wizard-step>
+
+                <wizard-step>
+                    <wizard-step-content>
+                        <ls-dynamic-form [configuration]="config[1]"
+                                         formId="onboarding:last_name"
+                                         (submitEvent)="onSubmit($event)" #form2>
+                        </ls-dynamic-form>
+                    </wizard-step-content>
+
+                    <wizard-step-footer>
+                        <button *ngIf="currentStep === 1" class="ui button" (click)="form2.doSubmit();">Next</button>
+                    </wizard-step-footer>
+                </wizard-step>
+            </wizard>
+
+        </div>
+    </div>
+    <ls-footer></ls-footer>
+</div>

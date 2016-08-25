@@ -1,0 +1,11 @@
+<div class="ui huge breadcrumb">
+    <template ngFor let-breadcrumb let-i="index" [ngForOf]="breadcrumbs">
+        <template [ngIf]="breadcrumbs.length - 1 === i">
+            <div class="active section">{{breadcrumb.name}}</div>
+        </template>
+        <template [ngIf]="breadcrumbs.length -1 > i">
+            <a [routerLink]="[breadcrumb.url]" class="section">{{breadcrumb.name}}</a>
+            <i class="right chevron icon divider"></i>
+        </template>
+    </template>
+</div>

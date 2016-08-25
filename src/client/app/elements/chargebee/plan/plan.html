@@ -1,0 +1,18 @@
+<div class="ui cards">
+    <div class="card" *ngFor="let plan of plans">
+        <div class="content">
+            <div class="header">{{plan.name}}</div>
+            <div class="meta">
+                <a>{{plan.price/100 | currency:'USD':true:'1.2-2'}} per {{plan.period_unit}}</a>
+            </div>
+            <div class="description">{{plan.description}}</div>
+        </div>
+        <div class="ui bottom attached button" [class.disabled]="plan.id === selectedPlan.id" [routerLink]="['../customer/upgrade/' + plan.id]">
+            <i class="add icon"></i>
+            <span [ngSwitch]="selectedPlan.id">
+                <template [ngSwitchCase]="plan.id">Selected</template>
+                <template ngSwitchDefault>Choose</template>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+@import "susy/sass/susy";
+@import "lifesite/responsive";
+@import "lifesite/mixins";
+@import "lifesite/theme";
+
+$susy: (
+    columns: 12,
+    debug:(image:hide)
+);
+
+.wrapper {
+    @include container();
+    padding: 70px;
+}
+
+.onboarding {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+:host .wizard {
+    background: white;
+    text-align: center;
+    padding: 20px;
+
+    .wizard__title {
+        padding: 20px 0;
+        font-size: 26px;
+        // todo - theme
+        color: #34b1db;
+    }
+
+    .ui.form label {
+        padding: 10px 0;
+        font-size: 20px;
+        font-weight: 100;
+    }
+
+    .ui.form .field {
+        max-width: 280px;
+        margin: 0 auto;
+
+        input {
+            text-align: center;
+        }
+    }
+
+    .wizard__step-footer {
+        padding: 20px 0;
+
+        // todo - theme
+        button {
+            color: white;
+            background-color: #01b0aa;
+        }
+    }
+}
+
+// Mobile
+@include susy-breakpoint(0 $screen-sm-min, 12) {
+    .wrapper {
+        padding: 0;
+    }
+}

@@ -1,0 +1,37 @@
+/*
+* Global Styles go here
+*/
+@import "font-awesome/font-awesome";
+@import "bourbon/bourbon";
+@import "lifesite/index";
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    width: 100%;
+    background: #f6f6f6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+a {
+    cursor: pointer;
+}
+
+.ls-well {
+    padding: 10px;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    border-radius: .28571429rem;
+    border: 1px solid rgba(34,36,38,.15);
+}

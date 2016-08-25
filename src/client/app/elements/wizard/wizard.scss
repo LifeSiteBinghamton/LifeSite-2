@@ -1,0 +1,27 @@
+.wizard {
+    &.wizard--slide-out {
+        .wizard__step {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+
+    &.wizard--reveal {
+        .wizard__step {
+            display: none;
+
+            &.active, &.prior-active {
+                display: block;
+            }
+        }
+    }
+
+    .wizard__footer {
+        border-top: 1px solid rgba(200,200,200, .5);
+        min-height: 20px;
+        padding: 5px 20px;
+    }
+}

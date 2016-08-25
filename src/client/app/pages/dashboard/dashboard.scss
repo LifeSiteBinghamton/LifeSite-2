@@ -1,0 +1,39 @@
+@import "susy/sass/susy";
+
+$susy: (
+    columns: 12
+);
+
+$dashboard-container-min: 819px;
+$dashboard-container-max: 820px;
+
+@include susy-breakpoint(0 $dashboard-container-min, 12) {
+    .widget-container {
+        @include span(12);
+    }
+}
+
+@include susy-breakpoint($dashboard-container-max, 12) {
+    .widget-container {
+        @include gallery(6);
+    }
+}
+
+.dashboard__heading {
+    @include container(12);
+    margin-right: 8px;
+}
+
+.dashboard__description {
+    @include span(8 of 12);
+}
+
+.dashboard__icon {
+    font-size: 28px;
+    padding: 5px;
+    @include span(last 2);
+}
+
+.dashboard__tab {
+    cursor: pointer;
+}

@@ -1,0 +1,32 @@
+<div class="register">
+    <div class="ui info message">
+        <lang-switcher></lang-switcher>
+    </div>
+
+    <div [hidden]="(handler.emailSent$ | async)">
+        <form class="ui form large" [class.loading]="(handler.isProcessing$ | async)" [formGroup]="registerForm" (submit)="onSubmit($event)">
+            <div class="field">
+                <div class="ui icon input">
+                    <input type="email" formControlName="email" name="email" placeholder="{{'EMAIL' | translate}}" >
+                    <i class="mail outline icon"></i>
+                </div>
+            </div>
+
+            <!-- E2E testing purposes only!! -->
+            <input style="visibility: hidden; display: none;" name="token" [(ngModel)]="token">
+            <input style="visibility: hidden; display: none;" name="id" [(ngModel)]="id">
+
+
+            <button type="submit" class="positive ui big submit button">{{'SIGNUP' | translate}}</button>
+        </form>
+    </div>
+
+    <div class="ui success message" [hidden]="!(handler.emailSent$ | async)">
+        <div class="header">{{'ACTIVATION_SUCCESS_HEADER' | translate}}</div>
+        <p>{{'ACTIVATION_SUCCESS_MSG' | translate}}</p>
+    </div>
+
+    <p class="register__haveAccount">{{'HAVE_ACCOUNT' | translate}} <a [routerLink]="['/']">{{'LOGIN' | translate}}</a></p>
+    <p class="register__terms">{{'SIGNING_UP' | translate}} <a [routerLink]="['/']">{{'TERMS_PRIVACY' | translate}}</a>.</p>
+
+</div>

@@ -1,0 +1,19 @@
+@import "lifesite/mixins";
+
+.login {
+    height: 400px;
+    width: 100%;
+    display: inline-block;
+    @include vertical-align();
+}
+
+.login__banner {
+    text-align: center;
+    padding: 10px;
+    margin-bottom:30px;
+    background-color: black;
+}
+
+.form {
+    padding: 0 30px 0 30px;
+}

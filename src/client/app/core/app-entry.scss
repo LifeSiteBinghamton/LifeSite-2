@@ -1,0 +1,26 @@
+@import "susy/sass/susy";
+@import "lifesite/responsive";
+@import "lifesite/mixins";
+
+$susy: (
+    columns: 12,
+    debug:(image:hide)
+);
+
+.wrapper {
+    @include container();
+    padding: 0 20px 32px 70px;
+}
+
+.nav-wrapper {
+    position: absolute;
+    left: 0;
+    top: 64px;
+}
+
+// Mobile
+@include susy-breakpoint(0 $screen-sm-min, 12) {
+    .wrapper {
+        padding: 0;
+    }
+}

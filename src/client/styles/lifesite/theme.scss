@@ -1,0 +1,107 @@
+$themes: (
+    lifesite-default-theme: (
+        footer-bg: #272936,
+        footer-text: #fff,
+
+        header-bg: #272936,
+        header-icon: #2e8aae,
+        header-icon-hover: #59b2d5,
+
+        mobilemenu-bg: #fff,
+        mobilemenu-header-bg: #2e8aae,
+
+        search-bg: #2e8aae,
+        search-icon: #fff,
+        search-icon-hover: #59b2d5,
+
+        sidenav-bg: #2e8aae,
+        sidenav-bg-hover: #59b2d5,
+        sidenav-icon: #fff,
+
+        page-header-text: #4f5263,
+        page-header-icon: #00afab,
+        page-header-icon-hover: #2e8aae,
+
+        widget-header-bg: #2e8aae,
+        widget-border: #e0e0e0,
+        widget-header-text: #fff,
+        widget-header-icon: #fff,
+        widget-header-icon-hover: #4accff,
+
+        onboarding-title: #34b1db,
+        onboarding-help: #51bfb7,
+        onboarding-next: #01b0aa,
+
+        //Globals
+        text: #68727e
+    ),
+    lifesite-joe-mama-theme: (
+        footer-bg: #272936,
+        footer-text: #fff,
+
+        //Header
+        header-bg: #276985,
+        header-icon: #1f4353,
+        header-icon-hover: #65b39d,
+
+        //Mobile Menu
+        mobilemenu-bg: #fff,
+        mobilemenu-header-bg: #2e8aae,
+
+        //Search
+        search-bg: #a7d1b0,
+        search-icon: #1f4353,
+        search-icon-hover: #59b2d5,
+
+        //Side nav
+        sidenav-bg: #a7d1b0,
+        sidenav-bg-hover: #f0f1b6,
+        sidenav-menu-toggle: #65b39d,
+        sidenav-icon: #497c6e,
+
+        //Page header
+        page-header-text: #276985,
+        page-header-icon: #1f4353,
+        page-header-icon-hover: #65b39d,
+
+        //Widget
+        widget-header-bg: #1f4353,
+        widget-border: #e0e0e0,
+        widget-header-text: #fff,
+        widget-header-icon: #fff,
+        widget-header-icon-hover: #65b39d,
+
+        //Globals
+        text: #68727e
+    )
+);
+
+
+// Theme [mixin]
+// --------------------
+// Apply all theme-colors for a class
+// - [$attribute] : The attribute that needs to get styled (color, background-color, etc)
+// - [$color-prop] : The property that exists in `theme.scss` that corresponds to this class-name's color
+// - [$preFix] : Optional pre-fix value such as border-color: `1px solid`
+// - [$postFix] : Optional post-fix value such as !important;
+@mixin themify($attribute, $color-prop, $preFix: '', $postFix: '') {
+    $class-selector: &;
+
+    @each $theme in map-keys($themes) {
+        $color: map-get(map-get($themes, $theme), $color-prop);
+
+        :host-context(.#{$theme}) #{$class-selector} {
+            #{$attribute}: #{$preFix} #{$color} #{$postFix};
+        }
+    }
+}
+
+@mixin themifyByClass($attribute, $class-name, $color-prop) {
+    @each $theme in map-keys($themes) {
+        $color: map-get(map-get($themes, $theme), $color-prop);
+
+        :host-context(.#{$theme}) #{$class-name} {
+            #{$attribute}: #{$color};
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<div class="toolbar" [ngClass]="{'toolbar--widget': type === 'widget', 'toolbar--page': type === 'page'}">
+    <ul class="toolbar__container">
+        <li class="toolbar__item" *ngIf="options.allowHelp" (click)="onHelp.emit(true);">
+            <i class="fa fa-question-circle"></i>
+        </li>
+        <li class="toolbar__item" *ngIf="options.allowSettings" (click)="onSettings.emit(true);">
+            <i class="fa fa-cog"></i>
+        </li>
+        <li class="toolbar__item" *ngIf="options.allowMinimize" (click)="minimize = !minimize; onMinimze.emit(minimize);">
+            <i class="fa" [ngClass]="{'fa-minus': !minimize, 'fa-plus': minimize}"></i>
+        </li>
+        <li class="toolbar__item" *ngIf="options.allowClose" (click)="onClose.emit(true);">
+            <i class="fa fa-times"></i>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,21 @@
+<div *ngIf="(handler.isVerified$ | async) && !(handler.isSuccess$ | async)" class="ui main text container">
+    <ls-loader [isLoading]="(handler.isProcessing$ | async)"></ls-loader>
+    <div class="ui massive success message">
+        <div class="header">
+            Your email was successfully verified
+            <i class="check circle outline icon activate__success-icon"></i>
+        </div>
+    </div>
+
+    <div class="ui raised very padded text container segment">
+        <h2 class="ui header">Let's choose a secure password</h2>
+        <ls-password (onSubmit)="onSubmit($event)" [buttonLabel]="'ACTIVATE_ACCOUNT' | translate"></ls-password>
+    </div>
+</div>
+
+<div *ngIf="(handler.isSuccess$ | async)" class="ui main text container">
+    <div class="ui raised very padded text container segment">
+        <h2 class="ui header">You're all set</h2>
+        <h4 class="ui header">Please click <a (click)="goToLogin()">here</a> to login and get started.</h4>
+    </div>
+</div>

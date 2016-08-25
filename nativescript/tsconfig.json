@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noEmitHelpers": true,
+        "baseUrl": "./",
+        "paths": {
+            "frameworks": [
+                "app/frameworks"
+            ],
+            "components": [
+                "app/components"
+            ],
+            "core": [
+                "app/core"
+            ],
+            "models": [
+                "app/models"
+            ],
+            "pages": [
+                "app/pages"
+            ],
+            "schemas": [
+                "app/schemas"
+            ],
+            "utility": [
+                "app/utility"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "platforms"
+    ]
+}

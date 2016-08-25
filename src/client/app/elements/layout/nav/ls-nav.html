@@ -1,0 +1,24 @@
+<div class="sidenav">
+    <ul class="sidenav__list">
+        <li (click)="toggleMenu()">
+            <a class="sidenav__item sidenav__item--toggle-menu">
+                <span>
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </span>
+            </a>
+        </li>
+
+        <li *ngFor="let item of navItems">
+            <a [routerLink]="[item.href]" routerLinkActive="sidenav__item--active"
+               [class.sidenav__item--expanded]="state === 'expanded'" @menuState="state"
+               class="sidenav__item">
+
+                <span class="sidenav__icon">
+                    <i class="fa {{item.icon}}" aria-hidden="true"></i>
+                </span>
+                <div class="sidenav__description">{{item.name}}</div>
+
+            </a>
+        </li>
+    </ul>
+</div>

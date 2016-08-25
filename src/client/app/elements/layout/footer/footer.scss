@@ -1,0 +1,19 @@
+@import "susy/sass/susy";
+@import "lifesite/theme";
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 32px;
+    width: 100%;
+    text-align: right;
+    padding: 8px 10px;
+    z-index: 999;
+
+    @include themify(background, footer-bg);
+}
+
+.footer-text {
+    @include themify(color, footer-text);
+}

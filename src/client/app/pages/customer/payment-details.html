@@ -1,0 +1,41 @@
+<div class="widget-container" *ngIf="plan && subscription && subscription.plan_id !== 'lifesite-basic'">
+    <div class="widget">
+        <div class="widget__header">
+            <h4 class="widget__title">Payment Details</h4>
+        </div>
+
+        <div class="widget__content">
+            <div class="ui center aligned basic segment">
+                <h2 class="ui icon header">
+                    <i class="fa fa-credit-card"></i>
+                    <div class="content">
+                        {{plan.name}}
+                        <!-- TODO how the fuck am i supposed to get the coupon code -->
+                        <div class="sub header">
+                            Your subscription will automatically renew on {{subscription.current_term_end * 1000 | date}}<br/>
+                            and you'll be charged
+                            {{plan.price / 100 | currency:plan.currency_code :true:'1.2-2'}}
+                            + tax
+                        </div>
+                    </div>
+                </h2>
+            </div>
+
+            <div class="ui horizontal divider">
+                Payment details
+            </div>
+
+            <div class="ui center aligned basic segment">
+                <credit-card></credit-card>
+            </div>
+
+            <div class="ui divider"></div>
+
+            <div class="ui center aligned basic segment">
+                <p>
+                    Would you like to <a [routerLink]="['./cancel']">cancel your account</a>?
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

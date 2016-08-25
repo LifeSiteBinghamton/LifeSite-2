@@ -1,0 +1,23 @@
+<div class="header">
+    <div class="header__logo">
+        <a [routerLink]="['/app']">
+            <img src="assets/img/header/logo.png">
+        </a>
+    </div>
+    <div class="header__search">
+        <ls-search></ls-search>
+    </div>
+    <div class="header__menu">
+        <div class="header__menu-wrapper">
+            <a class="header__menu-link" [routerLink]="['/app/customer']">Upgrade</a>
+            <a class="header__menu-link"><i class="fa fa-user fa-lg"></i></a>
+        </div>
+    </div>
+    <div class="header__menu--mobile">
+        <span (click)="mobileMenu.toggleMobileMenu()">
+            <i class="fa fa-bars"></i>
+        </span>
+    </div>
+
+    <mobile-menu #mobileMenu></mobile-menu>
+</div>

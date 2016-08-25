@@ -1,0 +1,88 @@
+@import "lifesite/theme";
+@import "lifesite/responsive";
+@import "susy/sass/susy";
+@import "bourbon/bourbon";
+
+
+.mobile-menu {
+    display: none;
+    overflow: hidden;
+    z-index: 999;
+    @include prefixer(user-select, none, webkit moz ms spec);
+    @include themify(background, mobilemenu-bg);
+}
+
+.mobile-menu--expanded {
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    @include prefixer(box-shadow, -8px 1px 24px -5px rgba(0,0,0,0.34), webkit moz spec);
+}
+
+.mobile-menu__header {
+    text-align: right;
+    padding: 15px 10px;
+    height: 64px;
+    @include themify(background, mobilemenu-header-bg);
+}
+
+.mobile-menu__header .button{
+    background: #e0e0e0;
+
+    &:hover {
+        background: #f6f6f6;
+    }
+}
+
+.mobile-menu__header button i{
+    color: #4f5263;
+}
+
+.mobile-menu__list {
+    li {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 1.2em;
+
+        &:hover {
+            background: #c2c2c2;
+            color: #f6f6f6;
+            cursor: pointer;
+        }
+    }
+
+    i {
+        width: 30px;
+        text-align: center;
+        font-size: 19px;
+        @include themify(color, text);
+    }
+}
+
+// Override search css
+:host .mobile-menu .search {
+    float: left;
+    padding: 0;
+    width: 70%;
+}
+
+.mobile-menu__footer {
+    @include container(12);
+    padding: 40px 20px 0 20px;
+}
+
+.mobile-menu .account {
+    @include span(6 of 12);
+}
+
+.mobile-menu .logout {
+    @include span(last 6 of 12);
+}
+
+// Mobile
+@include susy-breakpoint(0 $screen-sm-min, 12) {
+    .mobile-menu{
+        display: block;
+    }
+}

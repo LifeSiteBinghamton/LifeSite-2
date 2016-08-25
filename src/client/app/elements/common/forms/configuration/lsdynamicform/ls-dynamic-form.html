@@ -1,0 +1,14 @@
+<form class="ui form" [formGroup]="form">
+
+    <template ngFor [ngForOf]="fields" let-field>
+        <ls-field [field]="field"
+                  [form]="form"
+                  [validatorStyle]="configuration.validatorStyle"
+                  [validatorDisplayImmediate]="configuration.validatorsDisplayImmediate">
+        </ls-field>
+    </template>
+
+    <ng-content select="other-fields"></ng-content>
+
+    <ng-content select="actions"></ng-content>
+</form>

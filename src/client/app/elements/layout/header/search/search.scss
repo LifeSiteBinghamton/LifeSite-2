@@ -1,0 +1,33 @@
+@import "lifesite/theme";
+
+.search {
+    float: right;
+    width: 90%;
+    padding: 17px 20px 0 0;
+}
+
+.search__button {
+    float: right;
+    width: 35px;
+    text-align: center;
+    display: block;
+    height: 32px;
+    padding: 7px 0 0 0;
+    @include themify(background, search-bg);
+
+    a {
+        font-size: 1.3em;
+        @include themify(color, search-icon);
+    }
+}
+
+.search__input {
+    float: right;
+    width: 70%;
+    height: 32px;
+    padding: 8px 10px;
+    border: none;
+    font-size: 1.1em;
+    outline: none;
+    @include themify(color, text);
+}

@@ -1,0 +1,27 @@
+@import "susy/sass/susy";
+@import 'lifesite/responsive';
+
+$susy: (
+    columns: 12,
+    debug:(image:hide)
+);
+
+.credit-card {
+    @include container();
+
+    &__form-row {
+        padding-bottom: 20px;
+
+        &:not(:first-child) {
+            @include container();
+
+            .span {
+                @include gallery(6);
+            }
+        }
+    }
+
+    &__button-container {
+        text-align: right;
+    }
+}

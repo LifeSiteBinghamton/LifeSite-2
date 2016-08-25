@@ -1,0 +1,18 @@
+{
+    "EMAIL" : "Email",
+    "REGISTER": "Registro",
+    "PASSWORD" : "Contraseña",
+    "LOGIN" : "Iniciar Sesión",
+    "REQUIRED_ERROR": "Por favor introduzca su correo electrónico.",
+    "EMAIL_ERROR": "Introduzca una dirección de correo electrónico válida.",
+    "PASSWORD_ERROR": "Por favor, introduzca su contraseña.",
+    "LOGIN_BUTTON": "Iniciar sesión",
+    "ç": "Correo electrónico o la contraseña no válido",
+
+    "SIGNUP": "Regístrate",
+    "ACTIVATION_SUCCESS_HEADER": "La activación enlace enviado",
+    "ACTIVATION_SUCCESS_MSG": "Por favor, revisa tu e-mail para activar tu cuenta.",
+    "HAVE_ACCOUNT": "¿Tener una cuenta?",
+    "SIGNING_UP": "Al registrarse, usted está de acuerdo con nuestra",
+    "TERMS_PRIVACY": "Condiciones de uso y privacidad"
+}

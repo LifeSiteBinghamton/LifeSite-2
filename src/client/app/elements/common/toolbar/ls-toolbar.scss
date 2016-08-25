@@ -1,0 +1,39 @@
+@import "susy/sass/susy";
+@import "lifesite/theme";
+
+.toolbar {
+    text-align: right;
+    @include span(last 3 of 12);
+}
+
+.toolbar__item {
+    display: inline-block;
+
+    i {
+        padding: 0 1px;
+        cursor: pointer;
+    }
+}
+
+.toolbar--page .toolbar__item {
+    font-size: 21px;
+    @include themify(color, page-header-icon);
+
+    &:hover {
+        @include themify(color, page-header-icon-hover);
+    }
+}
+
+.toolbar--widget {
+    padding-right: 5px;
+}
+
+.toolbar--widget .toolbar__item {
+    font-size: 19px;
+    padding-right: 2px;
+    @include themify(color, widget-header-icon);
+
+    &:hover {
+        @include themify(color, widget-header-icon-hover);
+    }
+}

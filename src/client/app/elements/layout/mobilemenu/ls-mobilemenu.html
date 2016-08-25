@@ -1,0 +1,34 @@
+<div class="mobile-menu" [class.mobile-menu--expanded]="state === 'expanded'" @menuState="state">
+    <div class="mobile-menu__wrapper">
+        <div class="mobile-menu__header">
+            <ls-search></ls-search>
+            <button class="ui icon button" (click)="toggleMobileMenu()">
+                <i class="close icon"></i>
+            </button>
+        </div>
+        <br>
+        <ul class="mobile-menu__list">
+            <li>Upgrade</li>
+            <li>Account</li>
+        </ul>
+        <div class="ui divider"></div>
+        <ul class="mobile-menu__list">
+            <li>My Overview</li>
+            <li>Financials</li>
+            <li>Relationships</li>
+            <li>Legal</li>
+            <li>Possessions</li>
+            <li>Medical</li>
+            <li>My Life</li>
+            <li>Legacy</li>
+        </ul>
+        <div class="mobile-menu__footer">
+            <div class="account">
+                <button class="fluid positive ui button">My Account</button>
+            </div>
+            <div class="logout">
+                <button class="fluid inverted red ui button">Logout</button>
+            </div>
+        </div>
+    </div>
+</div>

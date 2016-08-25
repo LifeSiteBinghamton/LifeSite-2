@@ -1,0 +1,18 @@
+{
+    "EMAIL" : "Email Address",
+    "REGISTER": "Register",
+    "PASSWORD" : "Password",
+    "LOGIN": "Login",
+    "REQUIRED_ERROR": "Please enter your email.",
+    "EMAIL_ERROR": "Enter a valid email address.",
+    "PASSWORD_ERROR": "Please enter your password.",
+    "LOGIN_BUTTON": "Login",
+    "INVALID_CREDENTIALS": "Invalid Email or Password.",
+
+    "SIGNUP": "Sign Up",
+    "ACTIVATION_SUCCESS_HEADER": "Activation Link Sent",
+    "ACTIVATION_SUCCESS_MSG": "Please check your email to activate your account.",
+    "HAVE_ACCOUNT": "Have an account?",
+    "SIGNING_UP": "By signing up, you agree to our",
+    "TERMS_PRIVACY": "Terms of Use and Privacy Policy"
+}

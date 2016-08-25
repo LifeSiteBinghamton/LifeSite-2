@@ -1,0 +1,17 @@
+<page>
+    <div class="widget-container">
+        <div class="widget">
+            <div class="widget__header">
+                <h4 class="widget__title">Subscription Portal</h4>
+            </div>
+
+            <div class="widget__content">
+                <ls-loader [isLoading]="handler.loadingPlans$ | async"></ls-loader>
+                <plan [plans]="handler.plans$ | async" [selectedPlan]="handler.selectedPlan$ | async"></plan>
+            </div>
+        </div>
+    </div>
+
+    <payment-details [subscription]="handler.subscription$ | async" [plan]="handler.selectedPlan$ | async"></payment-details>
+
+</page>

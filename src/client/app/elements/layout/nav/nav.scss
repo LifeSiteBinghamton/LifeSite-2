@@ -1,0 +1,96 @@
+@import "susy/sass/susy";
+@import "bourbon/bourbon";
+@import "lifesite/theme";
+@import "lifesite/responsive";
+
+.sidenav {
+    width: 70px;
+    float: left;
+}
+
+.sidenav__list {
+    float: left;
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style: none;
+        display: block;
+    }
+}
+
+.sidenav__item {
+    padding: 9px 10px;
+    float: left;
+    font-size: 1.5em;
+    width: 50px;
+    display: block;
+    position: relative;
+    text-align: center;
+    z-index: 999;
+    @include themify(background, sidenav-bg);
+    @include themify(color, sidenav-icon);
+
+    &:hover {
+        cursor: pointer;
+        @include themify(background, sidenav-bg-hover);
+    }
+}
+
+.sidenav__item--active {
+    &:after {
+        left: 100%;
+        top: 0;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border: 19.5px solid transparent;
+    }
+
+    &.sidenav__item--expanded {
+        @include themify(background-color, sidenav-bg-hover);
+
+        &:after {
+            display: none;
+        }
+    }
+}
+@include themifyByClass(border-left-color, '.sidenav__item--active:after', sidenav-bg);
+@include themifyByClass(border-left-color, '.sidenav__item--active:hover:after', sidenav-bg-hover);
+
+
+.sidenav__item--toggle-menu {
+    @include themify(background-color, header-bg);
+
+    &:hover {
+        @include themify(background-color, header-bg, '', '!important');
+    }
+}
+
+.sidenav__icon {
+    width: 32px;
+    float: left;
+    text-align: center;
+}
+
+.sidenav__description {
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    @include prefixer(user-select, none, webkit moz ms spec);
+
+    .sidenav__item--expanded & {
+        width: auto;
+        overflow: visible;
+        left: 50px;
+    }
+}
+
+// Mobile
+@include susy-breakpoint(0 $screen-sm-min, 12) {
+    .sidenav {
+        display: none;
+    }
+}

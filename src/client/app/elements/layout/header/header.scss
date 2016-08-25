@@ -1,0 +1,102 @@
+@import "susy/sass/susy";
+@import "lifesite/theme";
+@import "lifesite/responsive";
+
+$header-height: 64px;
+
+$susy: (
+  columns: 12,
+  debug: (image: hide)
+);
+
+.header {
+    @include container(12);
+    height: $header-height;
+    @include themify(background, header-bg);
+}
+
+.header__logo {
+    @include span(2);
+    height: $header-height;
+}
+
+.header__search {
+    @include span(isolate 5 at 4);
+    height: $header-height;
+}
+
+.header__menu {
+    @include span(last 2);
+    height: $header-height;
+}
+
+.header__menu-list {
+    float: left;
+    position: relative;
+    left: 50%;
+    padding-top: 20px;
+}
+
+.header__menu-wrapper {
+    @include span(full);
+    text-align: center;
+}
+
+.header__menu-link {
+    font-size: 1.2em;
+    @include themify(color, header-icon);
+    margin-right: 20px;
+    line-height: $header-height;
+
+    &:hover {
+        @include themify(color, header-icon-hover);
+    }
+}
+
+.header__menu--mobile {
+    display: none
+}
+
+// Tablet
+@include susy-breakpoint($screen-sm-min $screen-md-min, 12) {
+    .header__search {
+        @include span(isolate 5 at 2);
+    }
+
+    .header__menu {
+        @include span(last 4)
+    }
+}
+
+// Mobile
+@include susy-breakpoint(0 $screen-sm-min, 12) {
+
+    // Hide the menu and the search for < 660px
+    .header__menu { display: none }
+    .header__search { display:none }
+
+    // increase the logo span size
+    .header__logo {
+        @include span(8);
+        text-align: left;
+    }
+
+    // show the mobile menu
+    .header__menu--mobile {
+        display: block;
+        @include span(last 4);
+        font-size: 1.8em;
+        text-align: right;
+        padding: 20px 20px;
+        @include themify(color, header-icon);
+    }
+
+    .header__menu--mobile i {
+        cursor: pointer;
+
+        &:hover {
+            @include themify(color, header-icon-hover);
+        }
+    }
+
+}

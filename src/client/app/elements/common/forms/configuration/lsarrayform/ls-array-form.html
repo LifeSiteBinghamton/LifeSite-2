@@ -1,0 +1,5 @@
+<template ngFor [ngForOf]="fields" let-field>
+    <ls-form-field [field]="field" [form]="form"></ls-form-field>
+</template>
+
+<button class="ui button" (click)="$event.preventDefault(); addMoreFields();">{{configuration.config.buttonLabel}}</button>

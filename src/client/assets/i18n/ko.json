@@ -1,0 +1,18 @@
+{
+    "EMAIL" : "이메일 주소",
+    "REGISTER": "레지스터",
+    "PASSWORD" : "암호",
+    "LOGIN": "로그인",
+    "REQUIRED_ERROR": "이메일을 입력하세요.",
+    "EMAIL_ERROR": "유효한 이메일 주소를 입력합니다.",
+    "PASSWORD_ERROR": "비밀번호를 입력하십시오.",
+    "LOGIN_BUTTON": "로그인",
+    "INVALID_CREDENTIALS": "잘못된 이메일 또는 비밀번호입니다.",
+
+    "SIGNUP": "회원 가입",
+    "ACTIVATION_SUCCESS_HEADER": "활성화 링크 전송",
+    "ACTIVATION_SUCCESS_MSG": "계정을 활성화 하기 위해 이메일을 확인하시기 바랍니다.",
+    "HAVE_ACCOUNT": "계정이있으세요?",
+    "SIGNING_UP": "가입 하면 에 동의하는 우리의",
+    "TERMS_PRIVACY": "이용 약관 및 개인 정보 보호 정책"
+}

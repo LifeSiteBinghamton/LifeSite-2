@@ -1,0 +1,55 @@
+@import "susy/sass/susy";
+@import './theme';
+
+// Arbitrary odd number to leave a gap in between two equal sized components
+$susy: (
+    columns: 15
+);
+
+.widget {
+    margin: 10px 0;
+    background-color: #fff;
+    box-shadow: 0 0 3px 1px rgba(194, 194, 194, 0.25);
+    @include themify(border, widget-border, '1px solid');
+}
+
+.widget__header {
+    padding-top: 13px;
+    padding-bottom: 27px;
+    @include themify(background-color, widget-header-bg);
+    @include themify(border-bottom, widget-border, '1px solid');
+}
+
+.widget__title {
+    float: left;
+    padding-left: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    @include themify(color, widget-header-text);
+}
+
+.widget__content {
+    position: relative; //fix for semantic loader
+    padding: 20px 10px;
+}
+
+.widget__footer {
+    position: relative;
+    padding: 10px;
+    text-align: right;
+    @include themify(border-top, widget-border, '1px solid');
+}
+
+// Container is length 15 to allow two equal sized components with one column in between
+.widget__content--two-column {
+    @include container(15);
+}
+
+.widget__content--left {
+    @include span(7 of 15);
+}
+
+.widget__content--right {
+    @include span(last 7);
+}
